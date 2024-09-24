@@ -1,0 +1,1340 @@
+/* General Reset */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ajusta el fondo de la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f0; /* Color de fondo claro */
+}
+
+/* Estilo del encabezado superior */
+.top-header {
+    background-color: #e2dbb4b5; /* Beige brillante */
+    color: rgb(53, 53, 53);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Estilo del menú de navegación */
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #00aaff 0%, #007bff 100%); /* Degradado azul claro a azul oscuro */
+    padding: 15px 20px;
+    border-bottom: 4px solid #007bff; /* Azul brillante */
+    position: relative; /* Asegura que los elementos absolutos se posicionen correctamente dentro del menú */
+}
+
+/* Contenedor del menú desplegable */
+.dropdown {
+    position: relative; /* Posición relativa para que el menú desplegable se posicione absolutamente dentro de él */
+}
+
+/* Opciones del menú de precios (ocultas por defecto) */
+.precios-opciones {
+    background: linear-gradient(45deg, #f5f5dc 0%, #f8f8f0 90%);
+    border: 1px solid #003d6a;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 150%;
+    left: -40px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+
+/* Clase que se activa al hacer clic en "Precios" */
+.precios-visible {
+    display: block; /* Muestra el menú */
+    opacity: 1;
+    transform: translateY(0); /* Lo devuelve a su posición */
+}
+
+/* Opciones de precios */
+.precios-opciones ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.precios-opciones li {
+    margin: 0;
+}
+
+.precios-opciones li a {
+    text-decoration: none;
+    color: rgb(55,55,55) !important;
+    font-size: 0.8em !important;
+    display: block;
+    padding: 8px !important;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.precios-opciones li a:hover {
+    background-color: #0056b3;
+    color: rgb(255,255,255);
+}
+
+
+/* Estilo del menú de navegación */
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #f5f5dc 0%, #e0d8b0 100%);; /* Degradado azul claro a azul oscuro */
+    padding: 15px 20px;
+    border-bottom: 4px solid #2b2b2b; /* Azul brillante */
+}
+
+.main-menu .menu-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-menu .menu-list li {
+    margin-right: 20px;
+}
+
+.main-menu .menu-list li a {
+    color: rgb(52, 52, 52);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.main-menu .menu-buttons {
+    display: flex;
+}
+
+.menu-btn {
+    margin-left: 15px;
+    background: #0067d6; /* Azul brillante */
+    color: rgb(52, 52, 52);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.menu-btn:hover {
+    background: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    /* Ajuste de la cabecera */
+    .top-header {
+        font-size: 0.4em; /* Fuente más pequeña */
+        padding: 8px;
+    }
+
+/* Ajustes del menú principal */
+.main-menu {
+    flex-direction: column;
+    align-items: center; /* Centramos los elementos en el eje horizontal */
+    padding: 10px;
+}
+
+/* La lista del menú se pone en columna */
+.main-menu .menu-list {
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Centramos los elementos en la lista */
+}
+
+/* Elementos de la lista ocupan el ancho completo */
+.main-menu .menu-list li {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center; /* Centramos el texto de los elementos del menú */
+}
+
+/* Botones del menú apilados */
+.main-menu .menu-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Centramos los botones */
+}
+
+.menu-btn {
+    width: 80%; /* Opcional: puedes ajustar el ancho como prefieras */
+    margin: 10px 0;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Ajuste de las opciones desplegables */
+.precios-opciones {
+    top: 120%; /* Ajusta la posición para pantallas más pequeñas */
+    left: 0; /* Alineamos el menú desplegable con el contenedor */
+    width: 100%; /* Abarca todo el ancho del contenedor */
+    text-align: center; /* Centramos el texto dentro del menú desplegable */
+}
+
+/* Opciones de precios en móviles */
+.precios-opciones li a {
+    font-size: 0.9em; /* Ajuste del tamaño de fuente */
+    padding: 10px;
+    text-align: center;
+}
+}
+
+/* Estilo del logo en el menú */
+.main-menu .logo {
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .main-menu .logo {
+        max-width: 200px;
+        height: auto;
+        align-content: center;
+        margin-right: -20px;
+    }
+}
+
+/* Estilo del título principal */
+/* Estilo cursivo para el título principal */
+.main-section h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    color: #007bff; /* Azul brillante */
+    text-align: center;
+    margin: 40px 0;
+}
+
+
+
+/* Estilo para la tabla de horario */
+.schedule {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.schedule table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    background: linear-gradient(135deg, #e0f7fa 0%, #d0e9f3 100%); /* Degradado azulado suave */
+    color: #333; /* Texto en gris oscuro */
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    overflow: hidden; /* Bordes redondeados sin afectar al contenido */
+}
+
+.schedule th, .schedule td {
+    padding: 20px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Separación sutil entre filas */
+}
+
+.schedule th {
+    background-color: #007bff; /* Fondo azul para los encabezados */
+    color: white; /* Texto blanco */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.schedule td {
+    background-color: #ffffff; /* Fondo blanco para las celdas de contenido */
+    color: #007bff; /* Texto azul para destacar */
+    font-weight: 600;
+}
+
+.schedule tr:last-child td {
+    border-bottom: none; /* Eliminar el borde de la última fila */
+}
+
+/*IMAGENES*/
+
+/*IMAGENES*/
+
+.image-row {
+    display: flex;
+    justify-content: space-between; /* Alinea las imágenes a la derecha */
+    gap: 30px; /* Ajusta el espacio entre las imágenes */
+    margin-bottom: 20px; /* Espacio debajo del conjunto de imágenes */
+    padding: 0 150px; /* Espacio a los lados de las imágenes para no pegarlas a los bordes */
+}
+
+.image-box img {
+    max-width: 600px; /* Ajusta el tamaño máximo de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto elegante */
+    transition: transform 0.2s ease;
+}
+
+.image-box img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Las imágenes se apilan verticalmente */
+        justify-content: center; /* Centra las imágenes */
+        align-items: center; /* Centra las imágenes */
+        padding: 0 20px; /* Ajustamos el padding lateral */
+        gap: 20px; /* Reducimos el espacio entre las imágenes */
+    }
+
+    .image-box img {
+        max-width: 100%; /* Las imágenes ocupan el 90% del ancho disponible */
+        height: auto; /* Mantiene la proporción de las imágenes */
+        margin: 0 auto; /* Centra las imágenes */
+        border-radius: 10px; /* Mantiene los bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    }
+
+    .image-box img:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+/* Botones de opciones */
+.buttons-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.option-button {
+    display: inline-block;
+    background: #0073b9; /* Azul oscuro */
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none; /* Elimina el subrayado en los enlaces */
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option-button:hover {
+    background: #007bff; /* Azul oscuro al pasar el ratón */
+    transform: scale(1.05);
+}
+
+
+/* Estilo para la sección de Metodología */
+.metodologia-section {
+    background-color: #f0f8ff; /* Fondo azul muy claro */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.metodologia-section h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: #007bff; /* Azul brillante */
+    margin-bottom: 30px;
+}
+
+.metodologia-box {
+    background-color: #ffffff; /* Fondo blanco para cada apartado */
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centrar la caja */
+    text-align: left;
+}
+
+.metodologia-box h3 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.metodologia-box ol {
+    list-style: none; /* Eliminar la numeración predeterminada */
+    padding-left: 0;
+    counter-reset: step-counter; /* Resetear el contador de pasos */
+}
+
+.metodologia-box li {
+    margin-bottom: 10px; /* Reducir espaciado entre cada paso */
+    font-size: 1.1em; /* Reducir el tamaño del texto */
+    color: #333; /* Texto en gris oscuro */
+    counter-increment: step-counter; /* Incrementar el contador de pasos */
+}
+
+.metodologia-box li strong {
+    color: #007bff; /* Azul para destacar el texto */
+}
+
+.metodologia-box li::before {
+    content: counter(step-counter) ". "; /* Mostrar la numeración correctamente: 1, 2, 3, 4 */
+    font-weight: bold;
+    color: #007bff; /* Numeración en azul */
+    font-size: 1.3em;
+    margin-right: 5px; /* Espaciado entre número y texto */
+}
+
+/* Sección de reseñas */
+.reviews {
+    background-color: #f8f8f0; /* Blanco */
+    text-align: center;
+    padding: 40px 0;
+}
+
+.reviews h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #007bff; /* Azul brillante */
+}
+
+/* Estilo para la sección de testimonios */
+.testimonials-section {
+    background-color: #f8f8f0; /* Fondo blanco */
+    padding: 40px 0;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2.5em;
+    color: #007bff; /* Azul brillante */
+    margin-bottom: 30px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.testimonial-box {
+    background-color: #f0f4f8; /* Azul muy claro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombras sutiles */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-box p {
+    font-size: 1.1em;
+    color: #333; /* Texto en gris oscuro/negro */
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.testimonial-box h4 {
+    font-size: 1.2em;
+    color: #007bff; /* Azul brillante */
+    font-weight: bold;
+}
+
+.testimonial-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS específico para la página de precios */
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo del título */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #003d6a; /* Azul oscuro */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo de la tabla de precios en la página secundaria */
+.pricing-table {
+    background: white; /* Degradado azul */
+    color: #006ada;
+    padding: 30px; /* Aumenta el padding para más espacio interno */
+    border-radius: 15px; /* Bordes redondeados en la tabla */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    margin: 0 auto;
+    max-width: 1000px; /* Ajusta el ancho máximo de la tabla */
+    border: 1px solid rgba(45, 45, 45, 0.656); /* Borde negro sutil */
+}
+
+/* Encabezado de la tabla de precios */
+.pricing-table h2 {
+    font-size: 2.5em; /* Tamaño de fuente mayor para el título */
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Estilo de la tabla */
+.pricing-table table {
+    width: 100%;
+    border-collapse: separate; /* Permite bordes separados entre celdas */ /* Elimina el espaciado entre celdas */
+}
+
+.pricing-table table th,
+.pricing-table table td {
+    padding: 20px; /* Aumenta el padding para más espacio en celdas */
+    text-align: left;
+    border-radius: 10px; /* Bordes redondeados en celdas */
+    border: 1px solid rgba(45, 45, 45, 0.656); /* Borde negro sutil */
+    font-size: 1.2em; /* Tamaño de fuente mayor para el contenido de la tabla */
+    margin-top: 15px;
+}
+
+.pricing-table table th {
+    background: white; /* Azul más oscuro para los encabezados */
+    color: #006ada;
+    font-size: 1.5em; /* Tamaño de fuente mayor para encabezados */
+}
+
+.pricing-table table tr:nth-child(even) td {
+    background: white;
+}
+
+.pricing-table table tr:nth-child(odd) td {
+    background: white;
+}
+
+/* Estilo para la información adicional */
+.pricing-table .more-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pricing-table .more-info p {
+    font-size: 1em; /* Tamaño de fuente mayor para el texto adicional */
+    margin-bottom: 15px; /* Aumenta el margen inferior */
+}
+
+.pricing-table .more-info a {
+    color: #006ada;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #00aaff; /* Línea abajo para destacar el enlace */
+    padding: 8px; /* Aumenta el padding para el enlace */
+    border-radius: 5px; /* Bordes redondeados en enlaces */
+    font-size: 1.2em; /* Tamaño de fuente mayor para enlaces */
+}
+
+.pricing-table .more-info a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Elimina la línea al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    /* Ajustes de la tabla de precios en móviles */
+    .pricing-table {
+        padding: 15px; /* Reduce el padding para dispositivos móviles */
+        max-width: 100%; /* Asegura que la tabla ocupe el ancho completo */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    }
+
+    /* Encabezado de la tabla de precios */
+    .pricing-table h2 {
+        font-size: 1.8em; /* Reduce el tamaño del título */
+        margin-top: 10px;
+    }
+
+    /* Ajustes en la tabla */
+    .pricing-table table th,
+    .pricing-table table td {
+        padding: 10px; /* Reduce el padding en las celdas */
+        font-size: 1em; /* Tamaño de fuente más pequeño en las celdas */
+    }
+
+    /* Estilo de los encabezados en la tabla */
+    .pricing-table table th {
+        font-size: 1.2em; /* Tamaño de fuente menor para los encabezados */
+    }
+
+    /* Información adicional ajustada */
+    .pricing-table .more-info p {
+        font-size: 0.9em; /* Reduce el tamaño de la fuente en texto adicional */
+    }
+
+    .pricing-table .more-info a {
+        font-size: 1em; /* Tamaño más pequeño para los enlaces */
+        padding: 5px; /* Reduce el padding en los enlaces */
+    }
+}
+
+
+
+/* Estilo del contenedor de copyright */
+.container-copy {
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #003366; /* Azul oscuro para el fondo */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    border-top: 1px solid #004080; /* Borde superior sutil para mayor definición */
+}
+
+/* Estilo para el texto del copyright */
+.copyright-text {
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina padding */
+}
+
+/* Estilo para enlaces en el copyright, si es necesario */
+.ft-menu a {
+    color: #ffffff; /* Color blanco para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.ft-menu a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Alineación del texto en pantallas grandes */
+.text-lg-end {
+    text-align: right; /* Alineación a la derecha en pantallas grandes */
+}
+
+.text-center {
+    text-align: center; /* Alineación centrada en pantallas pequeñas */
+}
+
+
+/* Animación de entrada */
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Aplicar la animación al cuerpo del contenido */
+.page-content {
+    animation: fadeInFromLeft 1s ease-out; /* O usa fadeInFromRight si prefieres la entrada desde la derecha */
+}
+
+/* Opcional: Estilo adicional para hacer la animación más fluida */
+.page-content-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-content-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+/* Recuadros destacados */
+.highlight-box {
+    background-color: #0af; /* Color de fondo muy claro */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Separación con el contenido siguiente */
+}
+
+/* Estilo para los párrafos dentro de los recuadros */
+.highlight-box p {
+    margin: 0; /* Eliminamos el margen por defecto */
+    font-size: 1.0em; /* Tamaño de texto más pequeño */
+    line-height: 1.6; /* Espaciado de línea más amplio */
+    color: #f8f8f0; /* beige */
+}
+
+/* Estilo para la introducción */
+.intro {
+    margin-bottom: 40px; /* Mayor margen inferior para separación */
+}
+
+.intro h1 {
+    font-size: 2.2em; /* Título un poco más grande */
+    color: #007bff; /* Azul brillante */
+    margin-bottom: 20px; /* Mayor separación con el párrafo */
+    text-align: center; /* Centrado del título */
+}
+
+.intro p {
+    font-size: 1.0em; /* Texto un poco más pequeño */
+    line-height: 1.7; /* Espaciado de línea más amplio para mayor legibilidad */
+    color: #333; /* Gris oscuro */
+    text-align: center; /* Centrado del párrafo */
+    margin: 0 auto; /* Centramos el texto */
+    max-width: 1200px; /* Ancho máximo para mantener el texto compacto */
+}
+
+/* Estilo para la sección "¿Por qué este curso?" */
+
+/* Estilo general del contenedor */
+/* Estilo general del contenedor */
+.container-why {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px auto; /* Centrado horizontal */
+    max-width: 800px; /* Ancho máximo */
+    text-align: center; /* Centrado del texto */
+}
+
+/* Estilo para los botones de encabezado */
+.button-header {
+    background-color: #DED5AA; /* Azul */
+    color: rgb(0, 0, 0);
+    padding: 12px 20px; /* Padding aumentado */
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    display: block; /* Cada botón ocupa una línea completa */
+    margin: 20px auto; /* Margen superior e inferior */
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+    width: 70%; /* Ancho del botón */
+    font-weight: bold;
+}
+
+/* Estilo para los recuadros básicos */
+.box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px; /* Padding aumentado */
+    margin: 10px auto; /* Margen superior e inferior */
+    background-color: #f8f9fa; /* Beige suave */
+    max-width: 80%; /* Asegurarse de que no exceda el ancho */
+}
+
+/* Estilo para los recuadros de clases */
+.box.clase {
+    width: 70%; /* Ancho aumentado del recuadro de clases */
+}
+
+/* Estilo para el texto "Cambridge English for Schools" */
+.highlight {
+    color: #007BFF; /* Azul */
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.highlight:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el recuadro de "Nuestros profesores" */
+.colorful-box {
+    border: 1px solid #007BFF; /* Azul */
+    border-radius: 5px;
+    padding: 20px; /* Padding aumentado */
+    margin: 10px auto; /* Margen superior e inferior */
+    background-color: #e9f4fb; /* Azul muy suave */
+}
+
+/* Estilo para el recuadro de "Ser tú mismo" */
+.kids-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px; /* Padding aumentado */
+    margin: 10px auto; /* Margen superior e inferior */
+    background-color: #f0f4f8; /* Beige suave */
+    color: #333; /* Texto oscuro */
+    font-size: 1.1em;
+}
+
+/* Estilo para el texto dentro de los recuadros */
+.box p {
+    margin: 0;
+}
+
+/* Estilo para el texto grande y llamativo */
+.callout-text {
+    font-size: 1.5em; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita */
+    font-style: italic; /* Cursiva */
+    color: #000000; /* Azul */
+    margin: 20px 0; /* Margen superior e inferior */
+    background-color: #e9f4fb; /* Fondo azul suave */
+    padding: 15px; /* Padding para resaltar */
+    border-radius: 2px; /* Bordes redondeados */
+    border: 1px solid #007BFF; /* Borde azul */
+}
+
+/* Estilo para el texto grande y atractivo de los profesores */
+.professor-text {
+    font-size: 1.5em; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Negrita */
+    font-style: italic; /* Cursiva */
+    color: #F8F8F0; /* Beige */
+    margin: 20px 0; /* Margen superior e inferior */
+    background-color: #007bff; /* Fondo azul suave */
+    padding: 10px; /* Padding para resaltar */
+    border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Para centrar el texto */
+}
+
+/* Media queries para el texto en móviles */
+@media (max-width: 600px) {
+    .professor-text {
+        font-size: 1.2em; /* Tamaño de fuente más pequeño en móvil */
+    }
+}
+
+
+/* Media queries para el texto grande en móviles */
+@media (max-width: 600px) {
+    .callout-text {
+        font-size: 1.2em; /* Tamaño de fuente más pequeño en móvil */
+    }
+}
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+    .button-header {
+        font-size: 1em; /* Tamaño de fuente más pequeño */
+        width: 90%; /* Botones más anchos en móvil */
+    }
+
+    .box {
+        padding: 15px; /* Menos padding en móvil */
+    }
+
+    .box.clase {
+        width: 90%; /* Recuadro de clases más ancho en móvil */
+    }
+
+    .colorful-box,
+    .kids-box {
+        padding: 15px; /* Menos padding en móvil */
+    }
+
+    .kids-box {
+        font-size: 1em; /* Tamaño de fuente más pequeño */
+    }
+}
+
+
+
+/* Estilo para la sección "¿Durante cuánto tiempo puedo contratarlo?" */
+.duration {
+    margin-bottom: 40px; /* Mayor margen inferior para separación */
+}
+
+.duration h2 {
+    font-size: 2.0em; /* Tamaño de encabezado más pequeño */
+    color: #007bff; /* Azul brillante */
+    margin-bottom: 20px; /* Mayor separación con el párrafo */
+    text-align: center; /* Centrado del título */
+}
+
+.duration ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0 auto; /* Centramos la lista */
+    max-width: 800px; /* Ancho máximo para la lista */
+}
+
+.duration ul li {
+    font-size: 1.0em; /* Texto de la lista un poco más pequeño */
+    margin-bottom: 15px; /* Espacio entre los elementos de la lista */
+    color: #333; /* Gris oscuro */
+    text-align: center; /* Centrado del texto de la lista */
+}
+
+.duration p {
+    font-size: 1.0em; /* Texto un poco más pequeño */
+    line-height: 1.7; /* Espaciado de línea más amplio */
+    color: #f8f8f0; /* Gris oscuro */
+    text-align: center; /* Centrado del párrafo */
+    margin: 0 auto; /* Centramos el texto */
+    max-width: 800px; /* Ancho máximo para mantener el texto compacto */
+}
+
+/* Estilo para la sección "¿Qué tipos de ejercicios ofrece?" */
+.exercise-types {
+    margin-bottom: 40px; /* Mayor margen inferior para separación */
+}
+
+.exercise-types h2 {
+    font-size: 2.0em; /* Tamaño de encabezado más pequeño */
+    color: #007bff; /* Azul brillante */
+    margin-bottom: 20px; /* Mayor separación con el párrafo */
+    text-align: center; /* Centrado del título */
+}
+
+.exercise-types p {
+    font-size: 1.0em; /* Texto un poco más pequeño */
+    line-height: 1.7; /* Espaciado de línea más amplio */
+    color: #333; /* Gris oscuro */
+    text-align: center; /* Centrado del párrafo */
+    margin: 0 auto; /* Centramos el texto */
+    max-width: 800px; /* Ancho máximo para mantener el texto compacto */
+}
+
+.exercise-types ol {
+    margin: 0 auto; /* Centramos la lista ordenada */
+    padding-left: 0; /* Elimina el padding izquierdo */
+    max-width: 800px; /* Ancho máximo para la lista */
+}
+
+.exercise-types ol li {
+    margin-bottom: 15px; /* Espacio entre los elementos de la lista */
+    font-size: 1.0em; /* Texto de la lista un poco más pequeño */
+    color: #333; /* Gris oscuro */
+}
+
+.exercise-types ul {
+    margin: 0 auto; /* Centramos la lista desordenada */
+    padding-left: 0; /* Elimina el padding izquierdo */
+    max-width: 800px; /* Ancho máximo para la lista */
+}
+
+.exercise-types ul li {
+    font-size: 1.0em; /* Texto de la lista un poco más pequeño */
+    color: #333; /* Gris oscuro */
+}
+
+
+/* Estilo para el pie de página */
+footer {
+    background: #007bff; /* Azul brillante para el pie de página */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Asegura que el pie de página esté bien posicionado */
+    bottom: 0;
+    width: 100%; /* Asegura que el pie de página ocupe todo el ancho */
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centramos el contenido del pie de página */
+}
+
+footer .copyright-text {
+    margin: 0;
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+}
+
+
+.clases-privadas {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los recuadros horizontalmente */
+    gap: 20px; /* Espacio entre los recuadros */
+    padding: 20px;
+}
+
+/* Estilo de los recuadros de información */
+.info-box {
+    background-color: #fcfcfc; /* Color de fondo de los recuadros */
+    border: 1px solid #ddd; /* Borde sutil para los recuadros */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo de los recuadros */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Estilo para los títulos dentro de los recuadros */
+.info-box h2 {
+    margin-top: 0; /* Elimina el margen superior del título */
+    font-size: 1.5em;
+    color: #242424; /* Color del texto del título */
+}
+
+/* Estilo para los párrafos dentro de los recuadros */
+.info-box p {
+    font-size: 1em; /* Tamaño del texto */
+    color: #242424; /* Color del texto */
+}
+
+/* Estilo para las opciones de destrezas */
+.skills-options {
+    display: flex;
+    flex-direction: column; /* Coloca los botones en una columna */
+    gap: 10px; /* Espacio entre los botones */
+    margin-bottom: 20px; /* Espacio debajo de las opciones */
+}
+
+.option-button-skills {
+    display: inline-block;
+    background: #0089ce; /* Azul claro */
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none; /* Elimina el subrayado en los enlaces */
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    cursor: default;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Contenedor de la sección de empresas */
+.empresas {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los recuadros horizontalmente */
+    gap: 20px; /* Espacio entre los recuadros */
+    padding: 20px;
+}
+/* Estilo para la sección de cofinanciación */
+.cofinanciacion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cofinanciacion-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    background: linear-gradient(135deg, #e0f7fa 0%, #d0e9f3 100%); /* Degradado azulado suave */
+    color: #333; /* Texto en gris oscuro */
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    overflow: hidden; /* Bordes redondeados sin afectar al contenido */
+}
+
+.cofinanciacion-table th, .cofinanciacion-table td {
+    padding: 20px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Separación sutil entre filas */
+}
+
+.cofinanciacion-table th {
+    background-color: #007bff; /* Fondo azul para los encabezados */
+    color: white; /* Texto blanco */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cofinanciacion-table td {
+    background-color: #ffffff; /* Fondo blanco para las celdas de contenido */
+    color: #007bff; /* Texto azul para destacar */
+    font-weight: 600;
+}
+
+.cofinanciacion-table tr:last-child td {
+    border-bottom: none; /* Eliminar el borde de la última fila */
+}
+
+.cofinanciacion-table tr:hover {
+    background-color: #e0f0ff; /* Fondo azul claro al pasar el ratón */
+}
+
+/* Section Styles for ¿Por qué Ivory? */
+.porque-section {
+    max-width: 800px;
+    margin: auto;
+}
+
+.content-box {
+    background-color: #fff;
+    border: 2px solid #1f5d88; /* Color verde */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.highlight-box-why {
+    background-color: #f9f9f9;
+    border: 2px dashed #1f5d88; /* Color verde */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+}
+/* Section Styles for Lo que Ofrecemos */
+.ofrece-section {
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Estilo para los recuadros */
+.ofrece-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+    height: 310px; /* Altura fija para todos los recuadros */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido se distribuya bien dentro del recuadro */
+    overflow: hidden;
+}
+
+/* Ajuste de la imagen dentro del recuadro */
+.ofrece-box img {
+    width: 100%; /* Ajusta el ancho de la imagen para que sea más pequeña */
+    max-height: 200px; /* Limita la altura máxima de la imagen */
+    object-fit: contain; /* La imagen mantiene su proporción sin deformarse */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    border-radius: 15px; /* Aplica el borde redondeado */
+}
+
+/* Estilo para el texto dentro del recuadro */
+.ofrece-box p {
+    margin-top: 25px;
+    color: #333;
+    font-weight: 600;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto hover en los recuadros */
+.ofrece-box:hover {
+    background-color: #0af;
+    color: white;
+    transform: scale(1.05);
+}
+
+.ofrece-box:hover img {
+    transform: scale(1.1); /* Añade un sutil efecto de zoom en la imagen al hacer hover */
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 900px) {
+    .ofrece-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .ofrece-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Section: About Us */
+.about-us {
+    width: 90%;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us p {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Section: Gallery */
+.gallery-section {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    color: #007bff; /* Azul brillante */
+    text-align: center;
+    margin: 40px 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .about-us p {
+        font-size: 1em;
+    }
+}
+
+
+/* Teachers Section */
+.teachers-section {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.teachers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px; /* Aumentar ancho máximo */
+    margin: 0 auto;
+}
+
+.teacher {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    position: relative;
+}
+
+.teachers img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.teachers img:hover {
+    transform: scale(1.05);
+}
+
+/* Descriptions */
+.description {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative; /* Para el posicionamiento */
+    z-index: 1; /* Asegurar que se muestre por encima */
+    margin-top: 5px;
+    width: 150%; /* Hacer que el recuadro ocupe todo el ancho */
+    text-align: center; /* Centrar el texto dentro del recuadro */
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 5px; /* Espaciado entre el nombre y la descripción */
+}
+
+.text {
+    color: #333;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .teachers {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Section: About Us */
+.nee-box {
+    font-family: 'Roboto', sans-serif;
+    width: 90%;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nee-box p {
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    .nee-box {
+        width: 95%; /* Aumentar el ancho para móviles */
+        padding: 15px; /* Menos padding */
+        margin: 20px auto; /* Menor margen superior */
+    }
+
+    .nee-box p {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño */
+        margin-bottom: 15px; /* Ajustar margen inferior */
+    }
+}
+
+
+.image-section {
+    text-align: center; /* Centrar la imagen */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+.hover-image {
+    max-width: 20%; /* Asegurarse de que la imagen no exceda el ancho del contenedor */
+    transition: transform 0.3s ease; /* Transición suave para la animación */
+}
+
+.hover-image:hover {
+    transform: scale(1.1); /* Ampliar un 10% al pasar el ratón */
+}
