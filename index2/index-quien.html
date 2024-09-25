@@ -46,9 +46,37 @@
             <li><a href="index-trabaja.html">Trabaja con nosotros</a></li>
         </ul>
         <div class="menu-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.esemtia&hl=es&pli=1" class="menu-btn">App</a>
+            <a href="#" id= "storeButton" class="menu-btn">APP</a>
         </div>
     </nav>
+
+    <script>
+        // Llamar a la función cuando el documento esté listo
+        document.getElementById('storeButton').addEventListener('click', function() {
+            // Redirigir según el sistema operativo
+            redirectToStore();
+        });
+    
+        // Función para detectar el sistema operativo y redirigir a la tienda correcta
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+            // Detectar si es iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // Redirigir a la App Store
+                window.location.href = "https://apps.apple.com/es/app/esemtia-connect/id516308206";
+            }
+            // Detectar si es Android
+            else if (/android/i.test(userAgent)) {
+                // Redirigir a la Play Store
+                window.location.href = "https://play.google.com/store/apps/details?id=com.esemtia&hl=es&pli=1";
+            }
+            // Si es otro dispositivo (web, PC, etc.), redirigir a la Play Store
+            else {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.esemtia&hl=es&pli=1";
+            }
+        }
+    </script>
 
     <header>
         <h1>¿Quiénes somos?</h1>
