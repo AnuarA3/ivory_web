@@ -5,11 +5,56 @@
 }
 
 /* Ajusta el fondo de la página */
+
+/* Reglas generales del body */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f0; /* Color de fondo claro */
+    min-height: 100vh; /* Asegura que cubre la pantalla completa */
+    background-image: url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* No se repite por defecto */
+    position: relative;
+}
+
+/* Páginas largas con rotación de fondo */
+body.long-page::before,
+body.long-page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+body.long-page::before {
+    background-image: url('fondo.png');
+}
+
+body.long-page::after {
+    background-image: url('fondo.png');
+    transform: rotate(180deg);
+    top: 100vh;
+}
+
+/* Estilos para páginas donde NO se debe repetir la imagen */
+body.no-repeat {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que cubre la pantalla completa */
+    background-image: url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* No se repite por defecto */
+    position: relative;
 }
 
 /* Estilo del encabezado superior */
@@ -423,6 +468,7 @@ body {
     background-color: #f8f8f0; /* Fondo blanco */
     padding: 40px 0;
     text-align: center;
+    background-image: url('fondo.png');
 }
 
 .testimonials-section h2 {
