@@ -606,7 +606,7 @@ h1 {
     color: white; /* Texto blanco */
     text-align: center; /* Centra el texto */
     font-size: 0.9em; /* Tamaño de fuente más pequeño */
-    border-top: 1px solid #004080; /* Borde superior sutil para mayor definición */
+    border-top: 1px solid #004080; /* Borde superior sutil para mayor definición */ 
 }
 
 
@@ -1399,7 +1399,7 @@ h2 {
 
 
 /* Estilo para el botón */
-.button-work {
+.button-work2 {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
@@ -1411,6 +1411,6 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
-.button-work:hover {
+.button-work2:hover {
     background-color: #0956a9; /* Color de fondo en hover */
 }
