@@ -162,9 +162,10 @@ body {
 /* Elementos de la lista ocupan el ancho completo */
 .main-menu .menu-list li {
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: 100%;
     text-align: center; /* Centramos el texto de los elementos del menú */
+    font-size: 0.8em;
 }
 
 /* Botones del menú apilados */
@@ -175,9 +176,9 @@ body {
 }
 
 .menu-btn {
-    width: 80%; /* Opcional: puedes ajustar el ancho como prefieras */
-    margin: 10px 0;
-    padding: 12px;
+    width: 60%; /* Opcional: puedes ajustar el ancho como prefieras */
+    margin: 1px 0;
+    padding: 10px;
     text-align: center;
 }
 
@@ -224,6 +225,12 @@ body {
     margin: 40px 0;
 }
 
+@media (max-width: 768px) {
+    .main-section h1 {
+        font-size: 2.7em;
+    }
+    
+}
 
 
 /* Estilo para la tabla de horario */
@@ -689,7 +696,7 @@ h1 {
 
 .intro h1 {
     font-size: 2.2em; /* Título un poco más grande */
-    color: #007bff; /* Azul brillante */
+    color: #003d6a; /* Azul brillante */
     margin-bottom: 20px; /* Mayor separación con el párrafo */
     text-align: center; /* Centrado del título */
 }
@@ -859,17 +866,17 @@ h1 {
 }
 
 /* Estilo de encabezados */
-h1, h2 {
+.container-online h2 {
     color: #333;
     font-weight: bold;
 }
 
 /* Estilo para el contenido de introducción */
-.intro {
+.intro-online {
     margin-bottom: 20px;
 }
 
-.intro p {
+.intro-online p {
     color: #555;
     line-height: 1.6;
 }
@@ -1388,4 +1395,22 @@ h2 {
 
 .hover-image:hover {
     transform: scale(1.1); /* Ampliar un 10% al pasar el ratón */
+}
+
+
+/* Estilo para el botón */
+.button-work {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #0067d6; /* Color de fondo del botón */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-work:hover {
+    background-color: #0956a9; /* Color de fondo en hover */
 }
