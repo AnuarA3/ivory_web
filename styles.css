@@ -57,14 +57,95 @@ body.no-repeat {
     position: relative;
 }
 
-/* Estilo del encabezado superior */
+/* Estilo para el encabezado */
 .top-header {
-    background-color: #e2dbb4b5; /* Beige brillante */
-    color: rgb(53, 53, 53);
+    background-color: #e2dbb4b5;
+    padding: 5px 0;
     text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
 }
+
+/* Flexbox para distribuir los elementos */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0.8em;
+}
+
+/* Enlaces de contacto */
+.contact-info a {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Enlaces al pasar el ratón */
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes específicos */
+.email-link {
+    order: 1; /* Alinea el correo a la izquierda */
+}
+
+.address-link {
+    order: 2; /* Alinea la dirección en el centro */
+    text-align: center;
+    flex-grow: 1;
+}
+
+.phone-link {
+    order: 3; /* Alinea el número de teléfono a la derecha */
+}
+
+
+/* Estilo para los íconos */
+.icon {
+    width: 1.5em; /* Tamaño igual al de la fuente */
+    height: 1.5em;
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contact-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        font-size: 1.1em;
+    }
+
+    
+/* Ajustes específicos */
+.email-link {
+    order: 1; /* Alinea el correo a la izquierda */
+}
+
+.address-link {
+    order: 2; /* Alinea la dirección en el centro */
+    text-align: center;
+    flex-grow: 1;
+}
+
+.phone-link {
+    order: 3; /* Alinea el número de teléfono a la derecha */
+}
+
+/* Estilo para los íconos */
+.icon {
+    width: 1.5em; /* Tamaño igual al de la fuente */
+    height: 1.5em;
+    margin-right: 1px; /* Espacio entre el ícono y el texto */
+}
+}
+
 
 /* Estilo del menú de navegación */
 .main-menu {
