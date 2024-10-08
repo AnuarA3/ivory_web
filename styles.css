@@ -370,35 +370,49 @@ body.no-repeat {
     border-collapse: collapse;
     width: 80%;
     max-width: 600px;
-    background: linear-gradient(135deg, #e0f7fa 0%, #d0e9f3 100%); /* Degradado azulado suave */
-    color: #333; /* Texto en gris oscuro */
+    background: linear-gradient(135deg, #e0f7fa 0%, #d0e9f3 100%);
+    color: #333;
     border-radius: 12px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    overflow: hidden; /* Bordes redondeados sin afectar al contenido */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .schedule th, .schedule td {
-    padding: 20px;
+    padding: 10px; /* Reducir el espacio entre las frases */
     font-size: 1.2em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Separación sutil entre filas */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Línea fina separadora */
 }
 
 .schedule th {
-    background-color: #007bff; /* Fondo azul para los encabezados */
-    color: white; /* Texto blanco */
+    background-color: #007bff;
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
 }
 
 .schedule td {
-    background-color: #ffffff; /* Fondo blanco para las celdas de contenido */
-    color: #007bff; /* Texto azul para destacar */
+    background-color: #ffffff;
+    color: #007bff;
     font-weight: 600;
+    text-align: left;
+}
+
+.schedule td:nth-child(2) {
+    text-align: right;
 }
 
 .schedule tr:last-child td {
-    border-bottom: none; /* Eliminar el borde de la última fila */
+    border-bottom: none;
 }
+
+/* Centrar el texto de "Lunes a Viernes" */
+.schedule .center {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-bottom: 10px; /* Ajustar el espaciado del centro */
+}
+
 
 /*IMAGENES*/
 
