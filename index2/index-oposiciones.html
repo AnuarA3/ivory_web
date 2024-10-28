@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <title>NEE y ACNEAE</title>
+    <title>Preparación de Oposiciones</title>
+    <meta name="description" content="Ofrecemos una preparación integral para oposiciones en Magisterio, Educación Física e Inglés en Ivory Academy.">
     <link rel="shortcut icon" type="image/x-icon" href="../academia-ingles-getafe/academia-ingles--refuerzo-asignaturas-getafe/favicon.png">
     <link rel="stylesheet" href="../styles.css"> <!-- Enlace al archivo CSS principal -->
 </head>
 
 
-<body class="no-repeat">
+<body>
 
 <!-- Encabezado superior -->
 <header class="top-header">
@@ -89,40 +90,55 @@
         }
     </script>
 
+<div class="opos">
+    <h1 class="center">Oposiciones Magisterio</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Oposición</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Inglés</strong></td>
+                <td>Ofrecemos una preparación completa y personalizada para que superes con éxito tu oposición de inglés, con material actualizado y prácticas dirigidas.</td>
+            </tr>
+            <tr>
+                <td><strong>Educación Física</strong></td>
+                <td>En nuestra academia, te brindamos herramientas y técnicas efectivas para que puedas destacarte en la oposición de educación física.</td>
+            </tr>
+            <tr>
+                <td><strong>General</strong></td>
+                <td>Nuestro programa de preparación general está diseñado para proporcionarte los conocimientos y habilidades necesarias para afrontar cualquier oposición con confianza.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-    <div class="container"></div>
-        <div class="nee-box">
-            <h1>Alumnos con Necesidades Especiales</h1>
-            <p>En nuestra academia, entendemos que cada estudiante es único y que algunos pueden enfrentar desafíos adicionales en su proceso de aprendizaje.</p> <p> Por eso, nuestro compromiso es trabajar de la mano con el centro escolar, las familias y nuestro equipo para maximizar el potencial de cada alumno, especialmente aquellos con necesidades educativas especiales (NEE) y aquellos que requieren apoyos adicionales (ACNEAE).</p>
 
-            <p>Nuestras metodologías están diseñadas para adaptarse a las diversas necesidades de todos los alumnos, independientemente de su nivel académico. Contamos con un enfoque personalizado que integra estrategias específicas para garantizar que cada estudiante reciba la atención y el apoyo necesarios para prosperar.</p>
-                
-            <p>Fomentamos una comunicación abierta con las familias, invitándolas a consultar la información disponible en nuestros centros. Juntos, podemos crear un entorno inclusivo y enriquecedor que permita a todos los estudiantes superar sus desafíos y alcanzar sus metas educativas. Al trabajar en conjunto, estamos convencidos de que podemos ayudar a nuestros alumnos a descubrir y desarrollar todo su potencial.</p>
-        </div>
-    </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const preciosToggle = document.querySelector('.dropdown-toggle');
+        const preciosOpciones = document.querySelector('.precios-opciones');
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const preciosToggle = document.querySelector('.dropdown-toggle');
-                const preciosOpciones = document.querySelector('.precios-opciones');
-        
-                // Mostrar el menú al hacer clic en "Precios"
-                preciosToggle.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevenir comportamiento por defecto del enlace
-                    preciosOpciones.classList.toggle('precios-visible'); // Alternar la clase para mostrar/ocultar
-                });
-        
-                // Mantener el menú visible si el ratón está dentro de la lista desplegable
-                preciosOpciones.addEventListener('mouseenter', function() {
-                    preciosOpciones.classList.add('precios-visible');
-                });
-        
-                // Ocultar el menú si el ratón sale del área del menú desplegable
-                preciosOpciones.addEventListener('mouseleave', function() {
-                    preciosOpciones.classList.remove('precios-visible');
-                });
-            });
-            </script>
+        // Mostrar el menú al hacer clic en "Precios"
+        preciosToggle.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevenir comportamiento por defecto del enlace
+            preciosOpciones.classList.toggle('precios-visible'); // Alternar la clase para mostrar/ocultar
+        });
+
+        // Mantener el menú visible si el ratón está dentro de la lista desplegable
+        preciosOpciones.addEventListener('mouseenter', function() {
+            preciosOpciones.classList.add('precios-visible');
+        });
+
+        // Ocultar el menú si el ratón sale del área del menú desplegable
+        preciosOpciones.addEventListener('mouseleave', function() {
+            preciosOpciones.classList.remove('precios-visible');
+        });
+    });
+    </script>
 
 </body>
 </html>

@@ -1555,3 +1555,49 @@ h2 {
 .button-work2:hover {
     background-color: #0956a9; /* Color de fondo en hover */
 }
+
+.opos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.opos table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%; /* Ancho de la tabla al 80% */
+    max-width: 800px; /* Ancho máximo de la tabla */
+    background: linear-gradient(135deg, #e0f7fa 0%, #d0e9f3 100%);
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+}
+
+.opos th, .opos td {
+    padding: 20px; /* Espacio entre las celdas */
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Línea separadora */
+}
+
+.opos th {
+    background-color: #007bff; /* Color de fondo del encabezado */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase; /* Mayúsculas en el encabezado */
+}
+
+.opos td {
+    background-color: #ffffff; /* Color de fondo de las celdas */
+    color: #000000; /* Color del texto en las celdas */
+    font-weight: 300; /* Texto en negrita */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.opos td:nth-child(2) {
+    text-align: left; /* Alinear texto a la izquierda en la segunda columna */
+}
+
+.opos tr:last-child td {
+    border-bottom: none; /* Sin línea en la última fila */
+}
+
