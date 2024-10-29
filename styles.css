@@ -1624,3 +1624,18 @@ h2 {
         font-size: 0.9em; /* Ajustar el tamaño de la fuente en las celdas */
     }
 }
+
+
+.responsive-image {
+    display: block;
+    margin: 0 auto; /* Centrar la imagen */
+    max-width: 50%; /* Para que no sobrepase el ancho del contenedor */
+    height: auto; /* Mantener la relación de aspecto */
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .responsive-image {
+        width: 50%; /* Ajusta el ancho en móviles */
+    }
+}
