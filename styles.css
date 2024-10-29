@@ -1636,6 +1636,6 @@ h2 {
 
 @media (max-width: 768px) {
     .responsive-image {
-        width: 50%; /* Ajusta el ancho en móviles */
+        width: 80%; /* Ajusta el ancho en móviles */
     }
 }
