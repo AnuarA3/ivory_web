@@ -1600,3 +1600,27 @@ h2 {
 .opos tr:last-child td {
     border-bottom: none; /* Sin línea en la última fila */
 }
+
+@media (max-width: 768px) {
+    .opos {
+        margin-bottom: 20px;
+    }
+
+    .opos table {
+        width: 80%;
+        max-width: 100%; /* Sin límite máximo */
+        font-size: 0.9em; /* Disminuir un poco el tamaño de la fuente */
+    }
+
+    .opos th, .opos td {
+        padding: 12px; /* Reducir el padding entre celdas */
+    }
+    
+    .opos th {
+        font-size: 1em; /* Ajustar el tamaño de la fuente del encabezado */
+    }
+
+    .opos td {
+        font-size: 0.9em; /* Ajustar el tamaño de la fuente en las celdas */
+    }
+}
