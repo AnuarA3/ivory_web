@@ -1723,3 +1723,103 @@ h2 {
         padding: 15px; /* Reduce el padding para que no se vea demasiado apretado */
     }
 }
+
+.image-tech {
+    text-align: center; /* Centrar la imagen */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+.hover-image-tech {
+    max-width: 40%; /* Asegurarse de que la imagen no exceda el ancho del contenedor */
+    transition: transform 0.3s ease; /* Transición suave para la animación */
+}
+
+.hover-image-tech:hover {
+    transform: scale(1.1); /* Ampliar un 10% al pasar el ratón */
+}
+
+
+/* Estilo para la sección "Nuestro Profesor" */
+.teacher-section {
+    background: linear-gradient(90deg, #f5f5dc 0%, #e0d8b0 100%); /* Degradado suave de beige */
+    border-radius: 15px; /* Bordes más redondeados */
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 65%; /* Ancho máximo ajustado */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra sutil para mayor sofisticación */
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Para que los bordes redondeados no sean cortados */
+    transition: transform 0.3s ease; /* Transición suave para la animación */
+}
+
+.teacher-section:hover {
+    transform: scale(1.05); /* Ampliar un 10% al pasar el ratón */
+}
+
+/* Título de la sección */
+.teacher-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Título en mayúsculas para mayor impacto */
+}
+
+/* Nombre del profesor */
+.teacher-info h3 {
+    font-size: 1.5rem;
+    color: #060606;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: capitalize; /* Capitaliza el nombre del profesor */
+}
+
+/* Descripción general del profesor */
+.teacher-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: justify; /* Justificado para mayor elegancia */
+    font-style: italic; /* Añadir un toque sutil */
+}
+
+/* Información detallada sobre el profesor */
+.teacher-info-details {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-style: italic; /* Añadir un toque sutil */
+}
+
+/* Bordes elegantes para los párrafos */
+.teacher-description, .teacher-info-details {
+    border-left: 4px solid #b5a37f; /* Borde izquierdo del párrafo con color dorado sutil */
+    padding-left: 15px;
+    margin-left: 20px;
+}
+
+/* Media query para pantallas más pequeñas (móviles y tablets) */
+@media (max-width: 768px) {
+    .teacher-section {
+        max-width: 90%; /* Aumentar el ancho máximo en dispositivos pequeños */
+        padding: 20px; /* Reducir padding en móviles */
+    }
+
+    .teacher-section h2 {
+        font-size: 1.5rem; /* Reducir tamaño del título en pantallas pequeñas */
+    }
+
+    .teacher-info h3 {
+        font-size: 1.2rem; /* Reducir tamaño del nombre del profesor */
+    }
+
+    .teacher-description,
+    .teacher-info-details {
+        font-size: 0.95rem; /* Reducir tamaño de la descripción */
+    }
+}
