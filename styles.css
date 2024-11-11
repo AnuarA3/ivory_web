@@ -291,7 +291,7 @@ body.no-repeat {
     margin-bottom: 5px;
     width: 100%;
     text-align: center; /* Centramos el texto de los elementos del menú */
-    font-size: 0.8em;
+    font-size: 5em;
 }
 
 /* Botones del menú apilados */
