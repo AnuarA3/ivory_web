@@ -238,7 +238,7 @@ body.no-repeat {
 .main-menu .menu-list li a {
     color: rgb(52, 52, 52);
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: bold;
 }
 
@@ -326,9 +326,8 @@ body.no-repeat {
 
 /* Estilo del logo en el menú */
 .main-menu .logo {
-    max-width: 200px;
-    height: auto;
-    margin-right: 20px;
+    max-width: 170px;
+    height: 35px;
 }
 
 @media (max-width: 768px) {
